@@ -68,9 +68,9 @@ Example of adding your validator keys to a zip file (node-0.zip):
     
     [INSTALL OBSERVING SQUAD]    
         #installs four observing node(s) and an elrond proxy instance on the local machine
-        ./script.sh observing_squad
+        ./script.sh install_observing_squad
 
-        Running the script with the 'observing_squad' parameter will deploy four observers (one for each shard) plus an instance of the MultiversX Proxy
+        Running the script with the 'install_observing_squad' parameter will deploy four observers (one for each shard) plus an instance of the MultiversX Proxy
             - please make sure your machine is able to comfortably run in such a configuration 
 
     [UPGRADE]
@@ -106,7 +106,7 @@ Example of adding your validator keys to a zip file (node-0.zip):
         Running the script with the 'add_nodes' parameter will deploy further nodes on your machine.
             - please take into account that additional hardware resources will be required for each new node
             - make sure you add the keys for the new node(s) inside the `$CUSTOM_HOME/VALIDATOR_KEYS` folder
-            - this option is not compatible with the `observing_squad` configuration 
+            - this option is not compatible with the `install_observing_squad` configuration 
 
     [CLEANUP]
         #Removes all the node(s) files on the local machine

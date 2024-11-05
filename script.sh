@@ -17,33 +17,17 @@ if [ $# -eq 0 ]
 
   show_menu #Show all the menu options
 
-  COLUMNS=18
+  COLUMNS=14
   PS3="Please select an action:"
-  options=("install" "observing_squad" "multikey_group" "upgrade" "upgrade_multikey" "upgrade_squad" "upgrade_proxy" "remove_db" "start" "start_all" "stop" "stop_all" "cleanup" "github_pull" "add_nodes" "get_logs" "benchmark" "quit")
+  options=("install_observing_squad" "upgrade" "upgrade_squad" "upgrade_proxy" "remove_db" "start" "start_all" "stop" "stop_all" "cleanup" "github_pull" "get_logs" "benchmark" "quit")
 
   select opt in "${options[@]}"
   do
 
   case $opt in
 
-  'install')
-    install
-    echo -e
-    read -n 1 -s -r -p "  Process finished. Press any key to continue..."
-    clear
-    show_menu
-    ;;
-
-  'observing_squad')
+  'install_observing_squad')
     observers
-    echo -e
-    read -n 1 -s -r -p "  Process finished. Press any key to continue..."
-    clear
-    show_menu
-    ;;
-
-  'multikey_group')
-    multikey
     echo -e
     read -n 1 -s -r -p "  Process finished. Press any key to continue..."
     clear
@@ -59,14 +43,6 @@ if [ $# -eq 0 ]
                 else
                   upgrade    
         fi
-    echo -e
-    read -n 1 -s -r -p "  Process finished. Press any key to continue..."
-    clear
-    show_menu
-    ;;
-
-'upgrade_multikey')
-    upgrade_squad
     echo -e
     read -n 1 -s -r -p "  Process finished. Press any key to continue..."
     clear
@@ -145,14 +121,6 @@ if [ $# -eq 0 ]
     show_menu
     ;;
 
-  'add_nodes')
-    add_node
-    echo -e
-    read -n 1 -s -r -p "  Process finished. Press any key to continue..."
-    clear
-    show_menu
-    ;;
-
   'get_logs')
     get_logs
     echo -e
@@ -183,16 +151,8 @@ if [ $# -eq 0 ]
 else
 
 case "$1" in
-'install')
-  install
-  ;;
-
-'observing_squad')
+'install_observing_squad')
   observers
-  ;;
-
-'multikey_group')
-  multikey
   ;;
 
 'upgrade')
@@ -204,10 +164,6 @@ case "$1" in
                 else
                   upgrade    
         fi
-  ;;
-
-'upgrade_multikey')
-  upgrade_squad
   ;;
 
 'upgrade_squad')
@@ -244,10 +200,6 @@ case "$1" in
 
 'github_pull')
   github_pull
-  ;;
-
-'add_nodes')
-  add_node
   ;;
 
 'get_logs')
